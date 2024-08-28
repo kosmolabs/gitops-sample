@@ -3,9 +3,9 @@ kind: Ingress
 metadata:
   name: go-server
 spec:
-  ingressClassName: nginx
+  ingressClassName: alb
   rules:
-    - host: gitops.arshsharma.com
+    - host: demo.luis.sh
       http:
         paths:
           - path: /
