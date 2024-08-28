@@ -2,8 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    alb.ingress.kubernetes.io/backend-protocol: HTTPS
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:548167652752:certificate/8a9dc370-2f43-4c05-b37b-c4e2c205d9be
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/subnets: subnet-0c59dbd010b3b8290,subnet-0c4aa62a6283a50ce,subnet-09ff2bc29d5233848
