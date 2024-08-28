@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: go-server
+  type: NodePort
   ports:
     - protocol: TCP
       port: 8080
