@@ -5,10 +5,10 @@ metadata:
 spec:
   destination:
     name: 'in-cluster'
-    namespace: 'prod'
+    namespace: 'default'
   source:
     path: 'chart'
-    repoURL: 'https://github.com/RinkiyaKeDad/gitops-sample'
+    repoURL: 'https://github.com/kosmolabs/gitops-sample'
     targetRevision: HEAD
     helm:
       valueFiles:
