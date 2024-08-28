@@ -1,6 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  annotations:
+    alb.ingress.kubernetes.io/backend-protocol: HTTPS
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:548167652752:certificate/9992e0fd-39d2-4f75-abbe-1be0a90b799f
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/subnets: subnet-0c59dbd010b3b8290,subnet-0c4aa62a6283a50ce,subnet-09ff2bc29d5233848
   name: go-server
 spec:
   ingressClassName: alb
@@ -15,3 +21,6 @@ spec:
                 name: go-server
                 port:
                   number: 8080
+  tls:
+  - hosts:
+    - demo.luis.sh
