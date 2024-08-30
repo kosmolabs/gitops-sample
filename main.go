@@ -2,12 +2,16 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
+	"time"
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
 	// Write the response to the client
-	fmt.Fprint(w, "Hello, World!")
+	t := time.Now()
+	fmt.Fprintf(w, "Hello there! time is: %s\n", t)
+	log.Println(r.Method, r.URL.Path, r.RemoteAddr)
 }
 
 func main() {
